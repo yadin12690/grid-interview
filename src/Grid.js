@@ -14,12 +14,9 @@ const Grid = ({ config, data }) => (
     <tbody>
       {data.map((dataItem, dataIndex) => ( // Map over table data from props
         <tr key={dataIndex}>
-          {config.map(({ component, field }, configIndex) => {// Map over table config from props
-            const ComponentToRender = component ?? component; //Check and save if component field is not empty
-            return (component // If component empty we render other fields
-              ? <td key={configIndex}><ComponentToRender data={dataItem[field]} /></td>
-              : <td key={configIndex}>{dataItem[field]}</td>)
-          }
+          {config.map(({ Component, field }, configIndex) => // Map over table config to get the fields and component to render
+            Component ? <td key={configIndex}><Component data={dataItem[field]} /></td>
+              : <td key={configIndex}>{dataItem[field]}</td>
           )}
         </tr>
       ))}

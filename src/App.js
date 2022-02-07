@@ -29,7 +29,7 @@ const moviesConfig = [
   {
     title: 'trailer',
     field: 'Trailer',
-    component: Trailer
+    Component: Trailer
   }
 ];
 
@@ -41,7 +41,7 @@ const pokemonConfig = [
   {
     title: 'name',
     field: 'name',
-    component: PokemonName
+    Component: PokemonName
   },
 ];
 
